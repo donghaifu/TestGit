@@ -1,0 +1,14 @@
+F:\kuaipan\telephone\autocad\Drawing\Drawing\bin\Debug\Drawing.exe
+F:\kuaipan\telephone\autocad\Drawing\Drawing\bin\Debug\Drawing.pdb
+F:\kuaipan\telephone\autocad\Drawing\Drawing\bin\Debug\Interop.DWGVIEWXLib.dll
+F:\kuaipan\telephone\autocad\Drawing\Drawing\bin\Debug\AxInterop.DWGVIEWXLib.dll
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Interop.DWGVIEWXLib.dll
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\AxInterop.DWGVIEWXLib.dll
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Drawing.csproj.ResolveComReference.cache
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Drawing.frmDrawing.resources
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Drawing.Properties.Resources.resources
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Drawing.exe
+F:\kuaipan\telephone\autocad\Drawing\Drawing\obj\x86\Debug\Drawing.pdb
