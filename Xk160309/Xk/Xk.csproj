@@ -172,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -222,6 +223,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Search.ico" />
+    <None Include="Resources\SearchDrawing.ico" />
+    <None Include="Resources\Manager.ico" />
+    <None Include="Resources\System.ico" />
+    <None Include="Resources\YanFan.ico" />
+    <None Include="Resources\JiShu.ico" />
+    <None Include="Resources\Downloads.ico" />
+    <None Include="Resources\Personal.ico" />
+    <None Include="Resources\Quit.ico" />
+    <None Include="Resources\Mail.ico" />
     <Content Include="YTO.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
