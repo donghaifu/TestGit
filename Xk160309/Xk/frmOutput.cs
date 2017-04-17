@@ -14,6 +14,7 @@ namespace Xk
     public partial class frmOutput : Form
     {
         DataSet ds = new DataSet();
+
         public frmOutput()
         {
             InitializeComponent();
@@ -22,45 +23,122 @@ namespace Xk
 
         private void frmOutput_Load(object sender, EventArgs e)
         {
-            dgvNextLevel.AutoGenerateColumns = false;
+            dgvNextLevel1.AutoGenerateColumns = false;
+            dgvNextLevel2.AutoGenerateColumns = false;
+            dgvNextLevel3.AutoGenerateColumns = false;
         }
 
         //查询按钮按下，分组进行排序
         private void button1_Click(object sender, EventArgs e)
         {
-            getNextLevel();
+            //特性查询
+            getNextLevel1();
+
+            //装配表查询
+            getNextLeve2();
+
+            //去向查询
+            getNextLevel3();
         }
 
-        private void getNextLevel()
+        private void getNextLevel1()
         {
             SqlConnection cn = new SqlConnection(Properties.Settings.Default.HarvestConnectionString);
-            string sql1 = " SELECT AssembleList.AssembleNo AS No,AssembleList.AssembleName AS Name,SheetName,TypeName,Assemble.Number,Assemble.Level,ImportantName,OwnerName,AssembleList.ValidDate,Assemble.Remark FROM AssembleList,Assemble,SheetList,TypeList,ImportantList,OwnerList";
-            sql1 += " WHERE Assemble.AssembleNo=@AssembleNo AND AssembleList.AssembleNo=Assemble.NextLevel AND AssembleList.SheetNo=SheetList.SheetNo AND AssembleList.TypeNo=TypeList.TypeNo AND AssembleList.ImportantNo=ImportantList.ImportantNo AND AssembleList.OwnerNo=OwnerList.OwnerNo";
-            sql1 += " UNION ALL";
-            sql1 += " SELECT PartList.PartNo AS No,PartList.PartName AS Name,SheetName,TypeName,Assemble.Number,Assemble.Level,ImportantName,OwnerName,PartList.ValidDate,Assemble.Remark FROM PartList,Assemble,SheetList,TypeList,ImportantList,OwnerList";
-            sql1 += " WHERE  Assemble.AssembleNo=@AssembleNo AND PartList.PartNo=Assemble.NextLevel AND PartList.SheetNo=SheetList.SheetNo AND PartList.TypeNo=TypeList.TypeNo AND PartList.ImportantNo=ImportantList.ImportantNo AND PartList.OwnerNo=OwnerList.OwnerNo";
-            sql1 += " ORDER BY Assemble.Level";
+
+            string sql1 = " SELECT Part.PartNo AS No,Part.PartName AS Name,SheetName,TypeName,ImportantName,CnName,ValidDate,Remark FROM Part,Sheet,Type,Important,Sysuser";
+            sql1 += " WHERE PartNo=@PartNo AND Part.SheetNo=Sheet.SheetNo AND Part.TypeNo=Type.TypeNo AND Part.ImportantNo=Important.ImportantNo AND Part.UserNo=Sysuser.UserNo";
+            SqlDataAdapter da1 = new SqlDataAdapter(sql1, cn);
+            da1.SelectCommand.Parameters.Add("PartNo", SqlDbType.NVarChar, 50).Value = tbAssemble.Text.ToString();
+
+            if (dgvNextLevel1.CurrentRow == null)
+            {
+                cn.Open();
+                da1.Fill(ds, "NextLevelList1");
+                cn.Close();
+   
+                dgvNextLevel1.DataSource = ds.Tables["NextLevelList1"];
+            }
+            else
+            {
+                ds.Tables["NextLevelList1"].Clear();
+
+                cn.Open();
+                da1.Fill(ds, "NextLevelList1");
+                cn.Close();
+
+                dgvNextLevel1.DataSource = ds.Tables["NextLevelList1"];
+            }
+
+
+        }
+
+
+        private void getNextLeve2()
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.HarvestConnectionString);
+            string sql1 = " SELECT Part.PartNo AS No,Part.PartName AS Name,SheetName,TypeName,Assemble.Number,Assemble.Groups,ImportantName,CnName,Assemble.ValidDate,Assemble.Remark FROM Part,Assemble,Sheet,Type,Important,Sysuser";
+            sql1 += " WHERE  Assemble.PartNo=@AssembleNo AND Part.PartNo=Assemble.ChildNo AND Part.SheetNo=Sheet.SheetNo AND Part.TypeNo=Type.TypeNo AND Part.ImportantNo=Important.ImportantNo AND Part.UserNo=Sysuser.UserNo";
+            sql1 += " ORDER BY Assemble.Groups";
 
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, cn);
             da1.SelectCommand.Parameters.Add("AssembleNo", SqlDbType.NVarChar, 20).Value = tbAssemble.Text.ToString();
             //da1.SelectCommand.Parameters.Add("SalesNo", SqlDbType.NVarChar, 10).Value = dgvSalesList.CurrentRow.Cells["SalesNo"].Value.ToString();
 
-            if (dgvNextLevel.CurrentRow == null)
+            if (dgvNextLevel2.CurrentRow == null)
             {
                 cn.Open();
-                da1.Fill(ds, "NextLevelList");
+                da1.Fill(ds, "NextLevelList2");
                 cn.Close();
-                dgvNextLevel.DataSource = ds.Tables["NextLevelList"];
+                dgvNextLevel2.DataSource = ds.Tables["NextLevelList2"];
             }
             else
             {
-                ds.Tables["NextLevelList"].Clear();
+                ds.Tables["NextLevelList2"].Clear();
                 cn.Open();
-                da1.Fill(ds, "NextLevelList");
+                da1.Fill(ds, "NextLevelList2");
                 cn.Close();
-                dgvNextLevel.DataSource = ds.Tables["NextLevelList"];
+                dgvNextLevel2.DataSource = ds.Tables["NextLevelList2"];
             }
 
+        }
+
+        private void getNextLevel3()
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.HarvestConnectionString);
+            SqlCommand SqlComm = cn.CreateCommand();
+            SqlComm.CommandText = "GetNextLevelShell";
+            SqlComm.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
+            No.Direction = ParameterDirection.Input;
+            No.Value = tbAssemble.Text.ToString();
+
+            SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
+            SalesNo.Direction = ParameterDirection.Input;
+            SalesNo.Value = "保留";
+
+            //查找去向的类型为4
+            SqlParameter Type = SqlComm.Parameters.Add(new SqlParameter("@Type", SqlDbType.Int, 10));
+            SalesNo.Direction = ParameterDirection.Input;
+            Type.Value = 4;
+
+            SqlDataAdapter da = new SqlDataAdapter(SqlComm);
+
+            if (dgvNextLevel3.CurrentRow == null)
+            {
+                cn.Open();
+                da.Fill(ds, "GetGo");
+                cn.Close();
+                dgvNextLevel3.DataSource = ds.Tables["GetGo"];
+            }
+            else
+            {
+                ds.Tables["GetGo"].Clear();
+                cn.Open();
+                da.Fill(ds, "GetGo");
+                cn.Close();
+                dgvNextLevel3.DataSource = ds.Tables["GetGo"];
+            }
         }
 
         //生成装配表按钮按下

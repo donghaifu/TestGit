@@ -109,6 +109,13 @@ namespace Xk.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap SearchAss {
+            get {
+                object obj = ResourceManager.GetObject("SearchAss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap SearchDrawing {
             get {
                 object obj = ResourceManager.GetObject("SearchDrawing", resourceCulture);

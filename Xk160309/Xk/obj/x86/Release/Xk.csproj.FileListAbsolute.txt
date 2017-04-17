@@ -83,12 +83,10 @@ E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAbout.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAssembleInput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAssemblePartInput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmDelete.resources
-E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmGoOutput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmLogin.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmMain.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmOutput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmPartInput.resources
-E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmSaleOutput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.Properties.Resources.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\GenerateResource.read.1.tlog
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\GenerateResource.write.1.tlog

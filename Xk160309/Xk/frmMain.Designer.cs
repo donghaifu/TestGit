@@ -34,20 +34,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.LoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.装配查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.销售号列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.装配表查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.去向查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.图纸查看ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.研发中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.图纸下载ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.技术部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.下一步要做ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.装配输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.通知单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.零件输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.组合件输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.装配组合ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.零部件删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.通知单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,9 +104,7 @@
             // 装配查询ToolStripMenuItem
             // 
             this.装配查询ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.销售号列表ToolStripMenuItem,
             this.装配表查询ToolStripMenuItem,
-            this.去向查询ToolStripMenuItem,
             this.图纸查看ToolStripMenuItem});
             this.装配查询ToolStripMenuItem.Image = global::Xk.Properties.Resources.Search;
             this.装配查询ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -116,40 +112,21 @@
             this.装配查询ToolStripMenuItem.Size = new System.Drawing.Size(153, 52);
             this.装配查询ToolStripMenuItem.Text = "公共查询";
             // 
-            // 销售号列表ToolStripMenuItem
-            // 
-            this.销售号列表ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("销售号列表ToolStripMenuItem.Image")));
-            this.销售号列表ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.销售号列表ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
-            this.销售号列表ToolStripMenuItem.Name = "销售号列表ToolStripMenuItem";
-            this.销售号列表ToolStripMenuItem.Size = new System.Drawing.Size(236, 54);
-            this.销售号列表ToolStripMenuItem.Text = "零件特性查询";
-            this.销售号列表ToolStripMenuItem.Click += new System.EventHandler(this.销售号列表ToolStripMenuItem_Click);
-            // 
             // 装配表查询ToolStripMenuItem
             // 
-            this.装配表查询ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("装配表查询ToolStripMenuItem.Image")));
+            this.装配表查询ToolStripMenuItem.Image = global::Xk.Properties.Resources.SearchAss;
             this.装配表查询ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.装配表查询ToolStripMenuItem.Name = "装配表查询ToolStripMenuItem";
-            this.装配表查询ToolStripMenuItem.Size = new System.Drawing.Size(236, 54);
-            this.装配表查询ToolStripMenuItem.Text = "装配表查询";
+            this.装配表查询ToolStripMenuItem.Size = new System.Drawing.Size(194, 54);
+            this.装配表查询ToolStripMenuItem.Text = "装配查询";
             this.装配表查询ToolStripMenuItem.Click += new System.EventHandler(this.装配表查询ToolStripMenuItem_Click);
-            // 
-            // 去向查询ToolStripMenuItem
-            // 
-            this.去向查询ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("去向查询ToolStripMenuItem.Image")));
-            this.去向查询ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.去向查询ToolStripMenuItem.Name = "去向查询ToolStripMenuItem";
-            this.去向查询ToolStripMenuItem.Size = new System.Drawing.Size(236, 54);
-            this.去向查询ToolStripMenuItem.Text = "去向查询";
-            this.去向查询ToolStripMenuItem.Click += new System.EventHandler(this.去向查询ToolStripMenuItem_Click);
             // 
             // 图纸查看ToolStripMenuItem
             // 
             this.图纸查看ToolStripMenuItem.Image = global::Xk.Properties.Resources.SearchDrawing;
             this.图纸查看ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.图纸查看ToolStripMenuItem.Name = "图纸查看ToolStripMenuItem";
-            this.图纸查看ToolStripMenuItem.Size = new System.Drawing.Size(236, 54);
+            this.图纸查看ToolStripMenuItem.Size = new System.Drawing.Size(194, 54);
             this.图纸查看ToolStripMenuItem.Text = "图纸查看";
             this.图纸查看ToolStripMenuItem.Click += new System.EventHandler(this.图纸查看ToolStripMenuItem_Click);
             // 
@@ -202,6 +179,14 @@
             this.装配输入ToolStripMenuItem.Size = new System.Drawing.Size(153, 52);
             this.装配输入ToolStripMenuItem.Text = "信息管理";
             // 
+            // 通知单输入ToolStripMenuItem
+            // 
+            this.通知单输入ToolStripMenuItem.Image = global::Xk.Properties.Resources.Mail;
+            this.通知单输入ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.通知单输入ToolStripMenuItem.Name = "通知单输入ToolStripMenuItem";
+            this.通知单输入ToolStripMenuItem.Size = new System.Drawing.Size(278, 54);
+            this.通知单输入ToolStripMenuItem.Text = "通知单输入";
+            // 
             // 零件输入ToolStripMenuItem
             // 
             this.零件输入ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("零件输入ToolStripMenuItem.Image")));
@@ -238,14 +223,6 @@
             this.零部件删除ToolStripMenuItem.Text = "零部件及装配调整";
             this.零部件删除ToolStripMenuItem.Click += new System.EventHandler(this.零部件删除ToolStripMenuItem_Click);
             // 
-            // 通知单输入ToolStripMenuItem
-            // 
-            this.通知单输入ToolStripMenuItem.Image = global::Xk.Properties.Resources.Mail;
-            this.通知单输入ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.通知单输入ToolStripMenuItem.Name = "通知单输入ToolStripMenuItem";
-            this.通知单输入ToolStripMenuItem.Size = new System.Drawing.Size(278, 54);
-            this.通知单输入ToolStripMenuItem.Text = "通知单输入";
-            // 
             // 系统ToolStripMenuItem
             // 
             this.系统ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -262,7 +239,7 @@
             this.关于ToolStripMenuItem.Image = global::Xk.Properties.Resources.Personal;
             this.关于ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 54);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -271,7 +248,7 @@
             this.退出ToolStripMenuItem.Image = global::Xk.Properties.Resources.Quit;
             this.退出ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 54);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -319,8 +296,6 @@
         private System.Windows.Forms.ToolStripMenuItem 组合件输入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 装配组合ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 装配表查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 销售号列表ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 去向查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 零部件删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 图纸查看ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 研发中心ToolStripMenuItem;

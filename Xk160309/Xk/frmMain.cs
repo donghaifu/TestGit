@@ -87,20 +87,6 @@ namespace Xk
             f.Show();
         }
 
-        private void 销售号列表ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSaleOutput f = new frmSaleOutput();
-            f.MdiParent = this;
-            f.Show();
-        }
-
-        private void 去向查询ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmGoOutput f = new frmGoOutput();
-            f.MdiParent = this;
-            f.Show();
-        }
-
         private void 零部件删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDelete f = new frmDelete();
