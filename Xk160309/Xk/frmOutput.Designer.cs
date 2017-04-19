@@ -41,9 +41,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOutput));
             this.btnQuery = new System.Windows.Forms.Button();
-            this.tbAssemble = new System.Windows.Forms.TextBox();
             this.dgvNextLevel2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +57,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAssemble = new System.Windows.Forms.Button();
             this.btnProduction = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
@@ -79,16 +80,26 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SaleNumber2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel3)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnQuery
             // 
             this.btnQuery.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(398, 19);
+            this.btnQuery.Location = new System.Drawing.Point(10, 110);
             this.btnQuery.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(135, 29);
@@ -97,18 +108,18 @@
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbAssemble
-            // 
-            this.tbAssemble.Location = new System.Drawing.Point(165, 22);
-            this.tbAssemble.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbAssemble.Name = "tbAssemble";
-            this.tbAssemble.Size = new System.Drawing.Size(195, 27);
-            this.tbAssemble.TabIndex = 21;
-            // 
             // dgvNextLevel2
             // 
             this.dgvNextLevel2.AllowUserToAddRows = false;
             this.dgvNextLevel2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNextLevel2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNextLevel2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNextLevel2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -121,7 +132,7 @@
             this.dataGridViewTextBoxColumn6,
             this.Column3,
             this.Column4});
-            this.dgvNextLevel2.Location = new System.Drawing.Point(398, 172);
+            this.dgvNextLevel2.Location = new System.Drawing.Point(20, 32);
             this.dgvNextLevel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvNextLevel2.Name = "dgvNextLevel2";
             this.dgvNextLevel2.ReadOnly = true;
@@ -151,8 +162,8 @@
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "SheetName";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn3.HeaderText = "图幅";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -162,8 +173,8 @@
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.DataPropertyName = "Number";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "数量";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -173,8 +184,8 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "TypeName";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn4.HeaderText = "件型";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -184,8 +195,8 @@
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column2.DataPropertyName = "Groups";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column2.HeaderText = "分组";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -195,8 +206,8 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ImportantName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn5.HeaderText = "重要度";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -229,21 +240,10 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 71;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(28, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "装配号输入：";
-            // 
             // btnAssemble
             // 
             this.btnAssemble.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAssemble.Location = new System.Drawing.Point(810, 19);
+            this.btnAssemble.Location = new System.Drawing.Point(10, 244);
             this.btnAssemble.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAssemble.Name = "btnAssemble";
             this.btnAssemble.Size = new System.Drawing.Size(135, 29);
@@ -255,7 +255,7 @@
             // btnProduction
             // 
             this.btnProduction.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnProduction.Location = new System.Drawing.Point(1016, 19);
+            this.btnProduction.Location = new System.Drawing.Point(10, 311);
             this.btnProduction.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnProduction.Name = "btnProduction";
             this.btnProduction.Size = new System.Drawing.Size(135, 29);
@@ -267,7 +267,7 @@
             // btnPurchase
             // 
             this.btnPurchase.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPurchase.Location = new System.Drawing.Point(1222, 19);
+            this.btnPurchase.Location = new System.Drawing.Point(10, 378);
             this.btnPurchase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(135, 29);
@@ -279,7 +279,7 @@
             // btnDrawing
             // 
             this.btnDrawing.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold);
-            this.btnDrawing.Location = new System.Drawing.Point(1428, 19);
+            this.btnDrawing.Location = new System.Drawing.Point(10, 445);
             this.btnDrawing.Name = "btnDrawing";
             this.btnDrawing.Size = new System.Drawing.Size(135, 29);
             this.btnDrawing.TabIndex = 27;
@@ -291,6 +291,14 @@
             // 
             this.dgvNextLevel1.AllowUserToAddRows = false;
             this.dgvNextLevel1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNextLevel1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvNextLevel1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNextLevel1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AssembleNo2,
@@ -301,12 +309,12 @@
             this.CnNo2,
             this.ValidDate2,
             this.Remark2});
-            this.dgvNextLevel1.Location = new System.Drawing.Point(398, 73);
+            this.dgvNextLevel1.Location = new System.Drawing.Point(22, 42);
             this.dgvNextLevel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvNextLevel1.Name = "dgvNextLevel1";
             this.dgvNextLevel1.ReadOnly = true;
             this.dgvNextLevel1.RowTemplate.Height = 23;
-            this.dgvNextLevel1.Size = new System.Drawing.Size(1165, 75);
+            this.dgvNextLevel1.Size = new System.Drawing.Size(1165, 59);
             this.dgvNextLevel1.TabIndex = 28;
             // 
             // AssembleNo2
@@ -331,8 +339,8 @@
             // 
             this.SheetNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.SheetNo2.DataPropertyName = "SheetName";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SheetNo2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SheetNo2.DefaultCellStyle = dataGridViewCellStyle8;
             this.SheetNo2.HeaderText = "图幅";
             this.SheetNo2.Name = "SheetNo2";
             this.SheetNo2.ReadOnly = true;
@@ -342,8 +350,8 @@
             // 
             this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TypeNo2.DataPropertyName = "TypeName";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TypeNo2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TypeNo2.DefaultCellStyle = dataGridViewCellStyle9;
             this.TypeNo2.HeaderText = "件型";
             this.TypeNo2.Name = "TypeNo2";
             this.TypeNo2.ReadOnly = true;
@@ -353,8 +361,8 @@
             // 
             this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ImportantNo2.DataPropertyName = "ImportantName";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ImportantNo2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ImportantNo2.DefaultCellStyle = dataGridViewCellStyle10;
             this.ImportantNo2.HeaderText = "重要度";
             this.ImportantNo2.Name = "ImportantNo2";
             this.ImportantNo2.ReadOnly = true;
@@ -391,9 +399,14 @@
             // 
             this.dgvNextLevel3.AllowUserToAddRows = false;
             this.dgvNextLevel3.AllowUserToDeleteRows = false;
-            this.dgvNextLevel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNextLevel3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvNextLevel3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNextLevel3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -404,7 +417,7 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.SaleNumber2});
-            this.dgvNextLevel3.Location = new System.Drawing.Point(398, 657);
+            this.dgvNextLevel3.Location = new System.Drawing.Point(22, 30);
             this.dgvNextLevel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvNextLevel3.Name = "dgvNextLevel3";
             this.dgvNextLevel3.ReadOnly = true;
@@ -416,8 +429,8 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "NextLevel";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn7.HeaderText = "件号";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -436,8 +449,8 @@
             // 
             this.件型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.件型.DataPropertyName = "件型";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.件型.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.件型.DefaultCellStyle = dataGridViewCellStyle13;
             this.件型.HeaderText = "件型";
             this.件型.Name = "件型";
             this.件型.ReadOnly = true;
@@ -456,8 +469,8 @@
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Level";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn10.HeaderText = "分组";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
@@ -476,8 +489,8 @@
             // 
             this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn12.DataPropertyName = "数量";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn12.HeaderText = "数量";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -487,8 +500,8 @@
             // 
             this.SaleNumber2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.SaleNumber2.DataPropertyName = "SalesNo";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SaleNumber2.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SaleNumber2.DefaultCellStyle = dataGridViewCellStyle16;
             this.SaleNumber2.HeaderText = "销售号";
             this.SaleNumber2.Name = "SaleNumber2";
             this.SaleNumber2.ReadOnly = true;
@@ -497,7 +510,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(604, 19);
+            this.button1.Location = new System.Drawing.Point(10, 177);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 29);
@@ -505,32 +518,93 @@
             this.button1.Text = "服务器状态";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(135, 28);
+            this.comboBox1.TabIndex = 32;
+            this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvNextLevel1);
+            this.groupBox1.Location = new System.Drawing.Point(376, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1202, 119);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "零件特性";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvNextLevel2);
+            this.groupBox2.Location = new System.Drawing.Point(376, 141);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1202, 492);
+            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "装配表";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvNextLevel3);
+            this.groupBox3.Location = new System.Drawing.Point(376, 639);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1202, 250);
+            this.groupBox3.TabIndex = 35;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "去向查询";
+            // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(32, 73);
+            this.treeView1.Location = new System.Drawing.Point(37, 56);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(328, 787);
+            this.treeView1.Size = new System.Drawing.Size(303, 816);
             this.treeView1.TabIndex = 31;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 18);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "导航树";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.btnQuery);
+            this.groupBox4.Controls.Add(this.btnAssemble);
+            this.groupBox4.Controls.Add(this.btnProduction);
+            this.groupBox4.Controls.Add(this.btnPurchase);
+            this.groupBox4.Controls.Add(this.btnDrawing);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Location = new System.Drawing.Point(1590, 14);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(156, 875);
+            this.groupBox4.TabIndex = 37;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "件号输入";
             // 
             // frmOutput
             // 
             this.AcceptButton = this.btnQuery;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 896);
+            this.ClientSize = new System.Drawing.Size(1764, 891);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgvNextLevel3);
-            this.Controls.Add(this.dgvNextLevel1);
-            this.Controls.Add(this.btnDrawing);
-            this.Controls.Add(this.btnPurchase);
-            this.Controls.Add(this.btnProduction);
-            this.Controls.Add(this.btnAssemble);
-            this.Controls.Add(this.btnQuery);
-            this.Controls.Add(this.tbAssemble);
-            this.Controls.Add(this.dgvNextLevel2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -541,6 +615,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,9 +627,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnQuery;
-        private System.Windows.Forms.TextBox tbAssemble;
         private System.Windows.Forms.DataGridView dgvNextLevel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAssemble;
         private System.Windows.Forms.Button btnProduction;
         private System.Windows.Forms.Button btnPurchase;
@@ -585,6 +661,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn SaleNumber2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

@@ -15,10 +15,17 @@ namespace Xk
     {
         DataSet ds = new DataSet();
 
+        //初始化绑定默认关键词，此数据源可以从数据库取
+        List<string> listOnit = new List<string>();
+        //输入key之后，返回的关键词
+        List<string> listNew = new List<string>();
+
+
         public frmOutput()
         {
             InitializeComponent();
             getSaleList();
+            BindComboBoxToDataTable();
         }
 
 
@@ -28,6 +35,28 @@ namespace Xk
             dgvNextLevel2.AutoGenerateColumns = false;
             dgvNextLevel3.AutoGenerateColumns = false;
         }
+
+        //绑定数据源
+        private void BindComboBoxToDataTable()
+        {
+
+            //去除重复的字段,先筛选"NextLevel"字段
+            string[] str = new string[] { "PartNo" };
+            //将DataTable转成DataView
+            DataView dw = ds.Tables["PartList"].DefaultView;
+            //先建立一个DataTable
+            DataTable DtForBind = dw.ToTable(true, str);
+
+            foreach (DataRow row in DtForBind.Rows)
+            {
+                //取第2列数据，从0开始
+                listOnit.Add(Convert.ToString(row[0]));
+            }
+
+            //有时间验证一下count数量是否对得上
+            this.comboBox1.Items.AddRange(listOnit.ToArray());
+        }
+
 
         //查询按钮按下，分组进行排序
         private void button1_Click(object sender, EventArgs e)
@@ -79,6 +108,13 @@ namespace Xk
                 this.Controls.Add(treeView1);
                 ds.Tables["NameList"].Clear();
             }
+
+            string sql2 = " SELECT PartNo FROM Part ";
+            SqlDataAdapter da2 = new SqlDataAdapter(sql2, cn);
+            cn.Open();
+            da2.Fill(ds, "PartList");
+            cn.Close();
+
         }
 
         /// <summary>
@@ -145,15 +181,18 @@ namespace Xk
         {
             foreach (TreeNode n in node)
             {
-                if (n.Name == tbAssemble.Text.ToUpper())
+                if (n.Name == comboBox1.Text.ToUpper())
                 {
                     //n.Expand(); 自我展开没有必要
-                    n.BackColor = Color.LightBlue;//匹配的背景色为蓝色
-                    ExpandParentNodes(n.Parent.Nodes);//迭代展开父节点
+                    n.BackColor = Color.FromArgb(0x00AAEF);//匹配的背景色为蓝色
+                    n.ForeColor = Color.White;
+                    if(n.Parent != null)//判断是不是销售号，如果是销售号就没有父节点，会引发程序错误
+                        ExpandParentNodes(n.Parent.Nodes);//迭代展开父节点
                 }
                 else
                 {
                     n.BackColor = Color.White;//不匹配的背景色为白色
+                    n.ForeColor = Color.Black;
                 }
                 PrintTreeViewNode(n.Nodes);//迭代
             }
@@ -187,7 +226,7 @@ namespace Xk
             string sql1 = " SELECT Part.PartNo AS No,Part.PartName AS Name,SheetName,TypeName,ImportantName,CnName,ValidDate,Remark FROM Part,Sheet,Type,Important,Sysuser";
             sql1 += " WHERE PartNo=@PartNo AND Part.SheetNo=Sheet.SheetNo AND Part.TypeNo=Type.TypeNo AND Part.ImportantNo=Important.ImportantNo AND Part.UserNo=Sysuser.UserNo";
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, cn);
-            da1.SelectCommand.Parameters.Add("PartNo", SqlDbType.NVarChar, 50).Value = tbAssemble.Text.ToString();
+            da1.SelectCommand.Parameters.Add("PartNo", SqlDbType.NVarChar, 50).Value = comboBox1.Text.ToString();
 
             if (dgvNextLevel1.CurrentRow == null)
             {
@@ -220,7 +259,7 @@ namespace Xk
             sql1 += " ORDER BY Assemble.Groups";
 
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, cn);
-            da1.SelectCommand.Parameters.Add("AssembleNo", SqlDbType.NVarChar, 20).Value = tbAssemble.Text.ToString();
+            da1.SelectCommand.Parameters.Add("AssembleNo", SqlDbType.NVarChar, 20).Value = comboBox1.Text.ToString();
             //da1.SelectCommand.Parameters.Add("SalesNo", SqlDbType.NVarChar, 10).Value = dgvSalesList.CurrentRow.Cells["SalesNo"].Value.ToString();
 
             if (dgvNextLevel2.CurrentRow == null)
@@ -250,7 +289,7 @@ namespace Xk
 
             SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
             No.Direction = ParameterDirection.Input;
-            No.Value = tbAssemble.Text.ToString();
+            No.Value = comboBox1.Text.ToString();
 
             SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
             SalesNo.Direction = ParameterDirection.Input;
@@ -291,7 +330,7 @@ namespace Xk
             //查询装配号
             SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
             No.Direction = ParameterDirection.Input;
-            No.Value = tbAssemble.Text.ToString();
+            No.Value = comboBox1.Text.ToString();
 
             //目前没有使用
             SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
@@ -326,7 +365,7 @@ namespace Xk
 
             SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
             No.Direction = ParameterDirection.Input;
-            No.Value = tbAssemble.Text.ToString();
+            No.Value = comboBox1.Text.ToString();
 
             SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
             SalesNo.Direction = ParameterDirection.Input;
@@ -357,7 +396,7 @@ namespace Xk
 
             SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
             No.Direction = ParameterDirection.Input;
-            No.Value = tbAssemble.Text.ToString();
+            No.Value = comboBox1.Text.ToString();
 
             SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
             SalesNo.Direction = ParameterDirection.Input;
@@ -387,7 +426,7 @@ namespace Xk
 
             SqlParameter No = SqlComm.Parameters.Add(new SqlParameter("@No", SqlDbType.NVarChar, 20));
             No.Direction = ParameterDirection.Input;
-            No.Value = tbAssemble.Text.ToString();
+            No.Value = comboBox1.Text.ToString();
 
             SqlParameter SalesNo = SqlComm.Parameters.Add(new SqlParameter("@SalesNo", SqlDbType.NVarChar, 10));
             SalesNo.Direction = ParameterDirection.Input;
@@ -471,9 +510,33 @@ namespace Xk
             //取得双击的节点
             TreeNode currentNode = e.Node;
             //更新输入文本框
-            tbAssemble.Text = currentNode.Name.ToString();
+            comboBox1.Text = currentNode.Name.ToString();
             //模拟查询动作
             button1_Click(sender,e);
+        }
+
+        private void comboBox1_TextUpdate(object sender, EventArgs e)
+        {
+            //清空combobox
+            this.comboBox1.Items.Clear();
+            //清空ListNew
+            listNew.Clear();
+            //遍历全部备查数据
+            foreach (var item in listOnit)
+            {
+                if (item.Contains(this.comboBox1.Text))
+                {
+                    listNew.Add(item);
+                }
+            }
+            //combobox添加已经查到的关键词
+            this.comboBox1.Items.AddRange(listNew.ToArray());
+            //设置光标位置，否则光标位置始终保持在第一列，造成输入的关键词倒序排列
+            this.comboBox1.SelectionStart = this.comboBox1.Text.Length;
+            //保持鼠标指针形状，有时鼠标指针会被覆盖，所以要进行一次设置
+            Cursor = Cursors.Default;
+            //自动弹出下拉框
+            this.comboBox1.DroppedDown = true;
         }
 
     }
