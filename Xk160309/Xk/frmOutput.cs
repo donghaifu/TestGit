@@ -184,7 +184,8 @@ namespace Xk
                 if (n.Name == comboBox1.Text.ToUpper())
                 {
                     //n.Expand(); 自我展开没有必要
-                    n.BackColor = Color.FromArgb(0x00AAEF);//匹配的背景色为蓝色
+                    n.BackColor = SystemColors.Highlight;//匹配的背景色为蓝色
+                        //FromArgb(0x00AAEF);这个是图标的颜色
                     n.ForeColor = Color.White;
                     if(n.Parent != null)//判断是不是销售号，如果是销售号就没有父节点，会引发程序错误
                         ExpandParentNodes(n.Parent.Nodes);//迭代展开父节点

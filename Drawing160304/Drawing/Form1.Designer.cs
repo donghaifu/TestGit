@@ -63,9 +63,9 @@
             // 
             // axDwgViewX1
             // 
-            this.axDwgViewX1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.axDwgViewX1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.axDwgViewX1.Enabled = true;
             this.axDwgViewX1.Location = new System.Drawing.Point(347, 20);
             this.axDwgViewX1.Name = "axDwgViewX1";
@@ -77,8 +77,8 @@
             // 
             this.dgvNextLevel.AllowUserToAddRows = false;
             this.dgvNextLevel.AllowUserToDeleteRows = false;
-            this.dgvNextLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvNextLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvNextLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNextLevel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.件号,
@@ -149,6 +149,7 @@
             this.Controls.Add(this.axDwgViewX1);
             this.Controls.Add(this.btnSee);
             this.Controls.Add(this.tbAssemble);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDrawing";
             this.Text = "图纸查看器";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDrawing_FormClosing);

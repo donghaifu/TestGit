@@ -90,3 +90,4 @@ E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmPartInput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.Properties.Resources.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\GenerateResource.read.1.tlog
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\GenerateResource.write.1.tlog
+E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmDownload.resources

@@ -33,8 +33,7 @@ namespace Xk
         private void frmMain_Load(object sender, EventArgs e)
         {
 
-           LoginInfo.Text = "您好！" + CPublic.UserName + "，欢迎使用本系统！";
-           int i = CPublic.DepartmentMask;
+           LoginInfo.Text = "您好！" + CPublic.CnName + "，欢迎使用本系统！";
 
             //处理各个菜单的显示权限
            if ((Menus.GgCx & CPublic.DepartmentMask) > 0)
@@ -164,6 +163,13 @@ namespace Xk
             //{ 
             //    e.Item.Visible = false; 
             //}
+        }
+
+        private void 图纸下载ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDownload f = new frmDownload();
+            f.MdiParent = this;
+            f.Show();
         }
 
      }
