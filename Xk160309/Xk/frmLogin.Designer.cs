@@ -36,7 +36,6 @@
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.cbIsManager = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,17 +114,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // cbIsManager
-            // 
-            this.cbIsManager.AutoSize = true;
-            this.cbIsManager.Location = new System.Drawing.Point(297, 151);
-            this.cbIsManager.Margin = new System.Windows.Forms.Padding(4);
-            this.cbIsManager.Name = "cbIsManager";
-            this.cbIsManager.Size = new System.Drawing.Size(87, 22);
-            this.cbIsManager.TabIndex = 7;
-            this.cbIsManager.Text = "管理员";
-            this.cbIsManager.UseVisualStyleBackColor = true;
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -133,7 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(524, 273);
-            this.Controls.Add(this.cbIsManager);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPwd);
@@ -164,6 +151,5 @@
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.CheckBox cbIsManager;
     }
 }

@@ -9,6 +9,15 @@ using System.Windows.Forms;
 
 namespace Xk
 {
+    static class Menus //推荐定义常量方式  
+    {
+        public const ushort GgCx = 0x8000;
+        public const ushort YfZx = 0x4000;
+        public const ushort JsB = 0x2000;
+        public const ushort XxGl = 0x0002;
+        public const ushort Xt = 0x0001;
+    }
+
     class CGlobal 
     {
         public static bool isShow = false; 
@@ -19,8 +28,9 @@ namespace Xk
     {
         //public static DataRow LoginInfo;
         public static bool isManager;
-        public static bool isUser;
-
+        public static bool isUser = false;
+        public static string UserName;
+        public static int DepartmentMask;
         //public static IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
         //public static IPAddress ipa = ipe.AddressList[3];
         //CPublic.ipa.ToString()
@@ -31,6 +41,8 @@ namespace Xk
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Users WHERE UserName=@UserName AND Pwd=@Pwd", cn);
             da.SelectCommand.Parameters.Add("@UserName", SqlDbType.NVarChar, 10).Value = UserID;
             da.SelectCommand.Parameters.Add("@Pwd", SqlDbType.NVarChar, 8).Value = Pwd;
+
+
             DataSet ds = new DataSet();
             cn.Open();
             da.Fill(ds);

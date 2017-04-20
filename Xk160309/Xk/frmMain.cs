@@ -32,19 +32,31 @@ namespace Xk
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            if (CPublic.isManager)
-            {
-                LoginInfo.Text = "您好！管理员，欢迎使用本系统！";
-                //装配输入ToolStripMenuItem.Enabled = false;
-            }
-            else
-            {
-                LoginInfo.Text = "您好！" + System.Environment.UserName + "，欢迎使用本系统！";
-                装配输入ToolStripMenuItem.Enabled = false;
-            }
 
-            //临时性封闭
-            //去向查询ToolStripMenuItem.Enabled = false;
+           LoginInfo.Text = "您好！" + CPublic.UserName + "，欢迎使用本系统！";
+           int i = CPublic.DepartmentMask;
+
+            //处理各个菜单的显示权限
+           if ((Menus.GgCx & CPublic.DepartmentMask) > 0)
+               装配查询ToolStripMenuItem.Enabled = true;
+           else
+               装配查询ToolStripMenuItem.Enabled = false;
+
+           if ((Menus.YfZx & CPublic.DepartmentMask) > 0)
+               研发中心ToolStripMenuItem.Enabled = true;
+           else
+               研发中心ToolStripMenuItem.Enabled = false;
+
+           if ((Menus.JsB & CPublic.DepartmentMask) > 0)
+               技术部ToolStripMenuItem.Enabled = true;
+           else
+               技术部ToolStripMenuItem.Enabled = false;
+
+           if ((Menus.XxGl & CPublic.DepartmentMask) > 0)
+               装配输入ToolStripMenuItem.Enabled = true;
+           else
+               装配输入ToolStripMenuItem.Enabled = false;
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
