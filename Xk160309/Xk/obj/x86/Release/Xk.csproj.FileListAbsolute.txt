@@ -81,7 +81,6 @@ E:\kuaipan\Git\TestGit\Xk160309\Xk\bin\Release\Xk.pdb
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\ResolveAssemblyReference.cache
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAbout.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAssembleInput.resources
-E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmAssemblePartInput.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmDelete.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmLogin.resources
 E:\kuaipan\Git\TestGit\Xk160309\Xk\obj\x86\Release\Xk.frmMain.resources

@@ -66,10 +66,10 @@
             this.CoRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.typeListTableAdapter = new Xk.DataSet1TableAdapters.TypeListTableAdapter();
-            this.sheetListTableAdapter = new Xk.DataSet1TableAdapters.SheetListTableAdapter();
-            this.importantListTableAdapter = new Xk.DataSet1TableAdapters.ImportantListTableAdapter();
-            this.ownerListTableAdapter = new Xk.DataSet1TableAdapters.OwnerListTableAdapter();
+            this.typeListTableAdapter = new Xk.DataSet1TableAdapters.TypeTableAdapter();
+            this.sheetListTableAdapter = new Xk.DataSet1TableAdapters.SheetTableAdapter();
+            this.importantListTableAdapter = new Xk.DataSet1TableAdapters.ImportantTableAdapter();
+            this.ownerListTableAdapter = new Xk.DataSet1TableAdapters.SysuserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheetListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -132,7 +132,7 @@
             // 
             // sheetListBindingSource
             // 
-            this.sheetListBindingSource.DataMember = "SheetList";
+            this.sheetListBindingSource.DataMember = "Sheet";
             this.sheetListBindingSource.DataSource = this.dataSet11;
             // 
             // dataSet11
@@ -145,12 +145,10 @@
             this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TypeNo2.DataPropertyName = "TypeNo";
             this.TypeNo2.DataSource = this.typeListBindingSource;
-            this.TypeNo2.DisplayMember = "TypeName";
             this.TypeNo2.HeaderText = "件型";
             this.TypeNo2.Name = "TypeNo2";
             this.TypeNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TypeNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TypeNo2.ValueMember = "TypeNo";
             this.TypeNo2.Width = 76;
             // 
             // typeListBindingSource
@@ -163,12 +161,10 @@
             this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ImportantNo2.DataPropertyName = "ImportantNo";
             this.ImportantNo2.DataSource = this.importantListBindingSource;
-            this.ImportantNo2.DisplayMember = "ImportantName";
             this.ImportantNo2.HeaderText = "重要度";
             this.ImportantNo2.Name = "ImportantNo2";
             this.ImportantNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ImportantNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ImportantNo2.ValueMember = "ImportantNo";
             this.ImportantNo2.Width = 97;
             // 
             // importantListBindingSource
@@ -181,12 +177,10 @@
             this.OwnerNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.OwnerNo2.DataPropertyName = "OwnerNo";
             this.OwnerNo2.DataSource = this.ownerListBindingSource;
-            this.OwnerNo2.DisplayMember = "OwnerName";
             this.OwnerNo2.HeaderText = "设计";
             this.OwnerNo2.Name = "OwnerNo2";
             this.OwnerNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.OwnerNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.OwnerNo2.ValueMember = "OwnerNo";
             this.OwnerNo2.Width = 76;
             // 
             // ownerListBindingSource
@@ -517,14 +511,14 @@
         private System.Windows.Forms.TextBox tbNextLevel;
         private System.Windows.Forms.Button btnDelete;
         private DataSet1 dataSet11;
-        private DataSet1TableAdapters.TypeListTableAdapter typeListTableAdapter;
+        private DataSet1TableAdapters.TypeTableAdapter typeListTableAdapter;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.BindingSource sheetListBindingSource;
-        private DataSet1TableAdapters.SheetListTableAdapter sheetListTableAdapter;
+        private DataSet1TableAdapters.SheetTableAdapter sheetListTableAdapter;
         private System.Windows.Forms.BindingSource importantListBindingSource;
-        private DataSet1TableAdapters.ImportantListTableAdapter importantListTableAdapter;
+        private DataSet1TableAdapters.ImportantTableAdapter importantListTableAdapter;
         private System.Windows.Forms.BindingSource ownerListBindingSource;
-        private DataSet1TableAdapters.OwnerListTableAdapter ownerListTableAdapter;
+        private DataSet1TableAdapters.SysuserTableAdapter ownerListTableAdapter;
         private System.Windows.Forms.BindingSource typeListBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbAssembleNo;

@@ -106,16 +106,16 @@ namespace Xk
         private void frmDelete_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“dataSet11.OwnerList”中。您可以根据需要移动或删除它。
-            this.ownerListTableAdapter.Fill(this.dataSet11.OwnerList);
+            this.ownerListTableAdapter.Fill(this.dataSet11.Sysuser);
             // TODO: 这行代码将数据加载到表“dataSet11.ImportantList”中。您可以根据需要移动或删除它。
-            this.importantListTableAdapter.Fill(this.dataSet11.ImportantList);
+            this.importantListTableAdapter.Fill(this.dataSet11.Important);
             // TODO: 这行代码将数据加载到表“dataSet11.SheetList”中。您可以根据需要移动或删除它。
-            this.sheetListTableAdapter.Fill(this.dataSet11.SheetList);
+            this.sheetListTableAdapter.Fill(this.dataSet11.Sheet);
             // TODO: 这行代码将数据加载到表“dataSet11.TypeList”中。您可以根据需要移动或删除它。
-            this.typeListTableAdapter.Fill(this.dataSet11.TypeList);
+            this.typeListTableAdapter.Fill(this.dataSet11.Type);
 
             // TODO: 这行代码将数据加载到表“dataSet11.SheetList”中。您可以根据需要移动或删除它。
-            this.sheetListTableAdapter.Fill(this.dataSet11.SheetList);
+            this.sheetListTableAdapter.Fill(this.dataSet11.Sheet);
 
         }
 
