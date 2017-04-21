@@ -13,7 +13,7 @@ namespace Xk
     public partial class frmDelete : Form
     {
         DataSet ds = new DataSet();
-        public frmDelete()
+        public frmDelete(TextBox fc)
         {
             InitializeComponent();
         }

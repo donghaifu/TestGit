@@ -74,6 +74,13 @@ namespace Xk.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Lib {
+            get {
+                object obj = ResourceManager.GetObject("Lib", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Mail {
             get {
                 object obj = ResourceManager.GetObject("Mail", resourceCulture);

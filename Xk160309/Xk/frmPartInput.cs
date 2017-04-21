@@ -11,9 +11,10 @@ namespace Xk
 {
     public partial class frmPartInput : Form
     {
-        public frmPartInput()
+        public frmPartInput(TextBox fc)
         {
             InitializeComponent();
+            partNoTextBox.Text = fc.Text;
         }
 
         private void partListBindingNavigatorSaveItem_Click(object sender, EventArgs e)

@@ -65,24 +65,32 @@ namespace Xk
 
         private void 零件输入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPartInput f = new frmPartInput();
-            f.MdiParent = this;
-            f.Show();
+            //frmPartInput f = new frmPartInput();
+            //f.MdiParent = this;
+            //f.Show();
         }
 
         private void 组合件输入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAssemblePartInput f = new frmAssemblePartInput();
-            f.MdiParent = this;
-            f.Show();
+            //frmAssemblePartInput f = new frmAssemblePartInput();
+            //f.MdiParent = this;
+            //f.Show();
         }
 
         private void 装配组合ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAssembleInput f = new frmAssembleInput();
-            f.MdiParent = this;
-            f.Show();
+            //frmAssembleInput f = new frmAssembleInput();
+            //f.MdiParent = this;
+            //f.Show();
         }
+
+        private void 零部件删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmDelete f = new frmDelete();
+            //f.MdiParent = this;
+            //f.Show();
+        }
+
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -98,12 +106,7 @@ namespace Xk
             f.Show();
         }
 
-        private void 零部件删除ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDelete f = new frmDelete();
-            f.MdiParent = this;
-            f.Show();
-        }
+
 
         private void 图纸查看ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -168,6 +171,13 @@ namespace Xk
         private void 图纸下载ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDownload f = new frmDownload();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void 通知单输入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInput f = new frmInput();
             f.MdiParent = this;
             f.Show();
         }

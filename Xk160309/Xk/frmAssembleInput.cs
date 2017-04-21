@@ -15,7 +15,7 @@ namespace Xk
         DataSet ds = new DataSet();
         int Index = 1;
 
-        public frmAssembleInput()
+        public frmAssembleInput(TextBox fc)
         {
             InitializeComponent();
         }
