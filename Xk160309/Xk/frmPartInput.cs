@@ -77,7 +77,7 @@ namespace Xk
             cmd3.Parameters.Add("TypeNo1", SqlDbType.NVarChar, 3).Value = comboBox2.SelectedValue.ToString(); ;
             cmd3.Parameters.Add("ImportantNo1", SqlDbType.NVarChar, 3).Value = comboBox3.SelectedValue.ToString(); ;
             cmd3.Parameters.Add("OwnerNo1", SqlDbType.NVarChar, 4).Value = comboBox4.SelectedValue.ToString(); ;
-            cmd3.Parameters.Add("TechnologyEmailNo1", SqlDbType.NVarChar, 20).Value = textBox1.Text.ToString();
+            cmd3.Parameters.Add("TechnologyEmailNo1", SqlDbType.NVarChar, 20).Value = textBox1.Text.ToUpper();
             cmd3.Parameters.Add("Remark1", SqlDbType.NVarChar, 60).Value = remarkTextBox.Text.ToString();
 
 

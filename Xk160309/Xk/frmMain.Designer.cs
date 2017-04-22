@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.LoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.装配查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.装配表查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.图纸查看ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +43,9 @@
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,40 +66,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.menuStrip1_ItemAdded);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.LoginInfo});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1017);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(3, 0, 31, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1914, 30);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.toolStripStatusLabel1.IsLink = true;
-            this.toolStripStatusLabel1.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(302, 25);
-            this.toolStripStatusLabel1.Text = "项目设计：付东海，分机号：3289#";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
-            // 
-            // LoginInfo
-            // 
-            this.LoginInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LoginInfo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.LoginInfo.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.LoginInfo.Name = "LoginInfo";
-            this.LoginInfo.Size = new System.Drawing.Size(1578, 25);
-            this.LoginInfo.Spring = true;
-            this.LoginInfo.Text = "以后将显示登录信息";
-            this.LoginInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // 装配查询ToolStripMenuItem
             // 
@@ -223,6 +189,40 @@
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.LoginInfo});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1017);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(3, 0, 31, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1914, 30);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.toolStripStatusLabel1.IsLink = true;
+            this.toolStripStatusLabel1.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(302, 25);
+            this.toolStripStatusLabel1.Text = "项目设计：付东海，分机号：3289#";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // LoginInfo
+            // 
+            this.LoginInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LoginInfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.LoginInfo.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.LoginInfo.Name = "LoginInfo";
+            this.LoginInfo.Size = new System.Drawing.Size(1578, 25);
+            this.LoginInfo.Spring = true;
+            this.LoginInfo.Text = "以后将显示登录信息";
+            this.LoginInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
@@ -234,7 +234,6 @@
             this.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);

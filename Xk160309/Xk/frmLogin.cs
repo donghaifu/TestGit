@@ -47,7 +47,11 @@ namespace Xk
                         CPublic.UserName = ds.Tables["PassList"].Rows[i]["UserName"].ToString();
                         CPublic.CnName = ds.Tables["PassList"].Rows[i]["CnName"].ToString();
                         CPublic.DepartmentMask = Convert.ToInt32(ds.Tables["PassList"].Rows[i]["DepartmentMask"]);
-                        Close();
+
+                        frmMain main = new frmMain();
+                        main.Show();
+                        this.Close();
+
                     }
                     else
                     {

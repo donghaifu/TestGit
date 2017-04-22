@@ -22,7 +22,9 @@ namespace Xk
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new frmLogin());
                 if (CPublic.isUser == true)
+                {
                     Application.Run(new frmMain());
+                }
             }
             else
             {
