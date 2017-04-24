@@ -174,7 +174,7 @@ namespace Xk
 
 
 
-        //提交俺就
+        //提交按钮
         private void btnOver_Click(object sender, EventArgs e)
         {
             Index = 1;

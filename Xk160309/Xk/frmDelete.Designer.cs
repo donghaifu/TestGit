@@ -29,22 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDelete));
             this.dgvNextLevel1 = new System.Windows.Forms.DataGridView();
-            this.AssembleNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssembleName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SheetNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sheetListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sheetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new Xk.DataSet1();
-            this.TypeNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.typeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ImportantNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.importantListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.OwnerNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ownerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.importantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sysuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.btnQueryNextLevel = new System.Windows.Forms.Button();
-            this.cbAssemble1 = new System.Windows.Forms.CheckBox();
             this.tbNextLevel = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
@@ -58,24 +52,33 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvAssemble = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sheetTableAdapter1 = new Xk.DataSet1TableAdapters.SheetTableAdapter();
+            this.typeTableAdapter1 = new Xk.DataSet1TableAdapters.TypeTableAdapter();
+            this.sysuserTableAdapter1 = new Xk.DataSet1TableAdapters.SysuserTableAdapter();
+            this.importantTableAdapter1 = new Xk.DataSet1TableAdapters.ImportantTableAdapter();
+            this.AssembleNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssembleName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SheetNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TypeNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ImportantNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OwnerNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Remark2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoAssembleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNextLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.typeListTableAdapter = new Xk.DataSet1TableAdapters.TypeTableAdapter();
-            this.sheetListTableAdapter = new Xk.DataSet1TableAdapters.SheetTableAdapter();
-            this.importantListTableAdapter = new Xk.DataSet1TableAdapters.ImportantTableAdapter();
-            this.ownerListTableAdapter = new Xk.DataSet1TableAdapters.SysuserTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheetListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.importantListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownerListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysuserBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemble)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,7 +95,8 @@
             this.SheetNo2,
             this.TypeNo2,
             this.ImportantNo2,
-            this.OwnerNo2});
+            this.OwnerNo2,
+            this.Remark2});
             this.dgvNextLevel1.Location = new System.Drawing.Point(14, 149);
             this.dgvNextLevel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.dgvNextLevel1.Name = "dgvNextLevel1";
@@ -100,93 +104,30 @@
             this.dgvNextLevel1.Size = new System.Drawing.Size(850, 115);
             this.dgvNextLevel1.TabIndex = 26;
             // 
-            // AssembleNo2
+            // sheetBindingSource
             // 
-            this.AssembleNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AssembleNo2.DataPropertyName = "No";
-            this.AssembleNo2.HeaderText = "件号";
-            this.AssembleNo2.Name = "AssembleNo2";
-            this.AssembleNo2.ReadOnly = true;
-            this.AssembleNo2.Width = 76;
-            // 
-            // AssembleName2
-            // 
-            this.AssembleName2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AssembleName2.DataPropertyName = "Name";
-            this.AssembleName2.HeaderText = "名称";
-            this.AssembleName2.Name = "AssembleName2";
-            this.AssembleName2.Width = 76;
-            // 
-            // SheetNo2
-            // 
-            this.SheetNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SheetNo2.DataPropertyName = "SheetNo";
-            this.SheetNo2.DataSource = this.sheetListBindingSource;
-            this.SheetNo2.DisplayMember = "SheetName";
-            this.SheetNo2.HeaderText = "图幅";
-            this.SheetNo2.Name = "SheetNo2";
-            this.SheetNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SheetNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.SheetNo2.ValueMember = "SheetNo";
-            this.SheetNo2.Width = 76;
-            // 
-            // sheetListBindingSource
-            // 
-            this.sheetListBindingSource.DataMember = "Sheet";
-            this.sheetListBindingSource.DataSource = this.dataSet11;
+            this.sheetBindingSource.DataMember = "Sheet";
+            this.sheetBindingSource.DataSource = this.dataSet11;
             // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // TypeNo2
+            // typeBindingSource
             // 
-            this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TypeNo2.DataPropertyName = "TypeNo";
-            this.TypeNo2.DataSource = this.typeListBindingSource;
-            this.TypeNo2.HeaderText = "件型";
-            this.TypeNo2.Name = "TypeNo2";
-            this.TypeNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TypeNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TypeNo2.Width = 76;
+            this.typeBindingSource.DataMember = "Type";
+            this.typeBindingSource.DataSource = this.dataSet11;
             // 
-            // typeListBindingSource
+            // importantBindingSource
             // 
-            this.typeListBindingSource.DataMember = "TypeList";
-            this.typeListBindingSource.DataSource = this.dataSet11;
+            this.importantBindingSource.DataMember = "Important";
+            this.importantBindingSource.DataSource = this.dataSet11;
             // 
-            // ImportantNo2
+            // sysuserBindingSource
             // 
-            this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ImportantNo2.DataPropertyName = "ImportantNo";
-            this.ImportantNo2.DataSource = this.importantListBindingSource;
-            this.ImportantNo2.HeaderText = "重要度";
-            this.ImportantNo2.Name = "ImportantNo2";
-            this.ImportantNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ImportantNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ImportantNo2.Width = 97;
-            // 
-            // importantListBindingSource
-            // 
-            this.importantListBindingSource.DataMember = "ImportantList";
-            this.importantListBindingSource.DataSource = this.dataSet11;
-            // 
-            // OwnerNo2
-            // 
-            this.OwnerNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.OwnerNo2.DataPropertyName = "OwnerNo";
-            this.OwnerNo2.DataSource = this.ownerListBindingSource;
-            this.OwnerNo2.HeaderText = "设计";
-            this.OwnerNo2.Name = "OwnerNo2";
-            this.OwnerNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.OwnerNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.OwnerNo2.Width = 76;
-            // 
-            // ownerListBindingSource
-            // 
-            this.ownerListBindingSource.DataMember = "OwnerList";
-            this.ownerListBindingSource.DataSource = this.dataSet11;
+            this.sysuserBindingSource.DataMember = "Sysuser";
+            this.sysuserBindingSource.DataSource = this.dataSet11;
             // 
             // label4
             // 
@@ -210,17 +151,6 @@
             this.btnQueryNextLevel.Text = "查询";
             this.btnQueryNextLevel.UseVisualStyleBackColor = true;
             this.btnQueryNextLevel.Click += new System.EventHandler(this.btnQueryNextLevel_Click);
-            // 
-            // cbAssemble1
-            // 
-            this.cbAssemble1.AutoSize = true;
-            this.cbAssemble1.Location = new System.Drawing.Point(195, 97);
-            this.cbAssemble1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbAssemble1.Name = "cbAssemble1";
-            this.cbAssemble1.Size = new System.Drawing.Size(94, 24);
-            this.cbAssemble1.TabIndex = 23;
-            this.cbAssemble1.Text = "组合件";
-            this.cbAssemble1.UseVisualStyleBackColor = true;
             // 
             // tbNextLevel
             // 
@@ -260,11 +190,10 @@
             this.groupBox1.Controls.Add(this.btnChange);
             this.groupBox1.Controls.Add(this.tbNextLevel);
             this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Controls.Add(this.cbAssemble1);
             this.groupBox1.Controls.Add(this.dgvNextLevel1);
             this.groupBox1.Controls.Add(this.btnQueryNextLevel);
             this.groupBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(47, 37);
+            this.groupBox1.Location = new System.Drawing.Point(47, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(901, 330);
             this.groupBox1.TabIndex = 33;
@@ -373,57 +302,6 @@
             this.dgvAssemble.Size = new System.Drawing.Size(850, 150);
             this.dgvAssemble.TabIndex = 38;
             // 
-            // CoNo
-            // 
-            this.CoNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoNo.DataPropertyName = "No";
-            this.CoNo.HeaderText = "序号";
-            this.CoNo.Name = "CoNo";
-            this.CoNo.ReadOnly = true;
-            this.CoNo.Width = 76;
-            // 
-            // CoAssembleNo
-            // 
-            this.CoAssembleNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoAssembleNo.DataPropertyName = "AssembleNo";
-            this.CoAssembleNo.HeaderText = "组合号";
-            this.CoAssembleNo.Name = "CoAssembleNo";
-            this.CoAssembleNo.ReadOnly = true;
-            this.CoAssembleNo.Width = 97;
-            // 
-            // CoNextLevel
-            // 
-            this.CoNextLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoNextLevel.DataPropertyName = "NextLevel";
-            this.CoNextLevel.HeaderText = "下级件号";
-            this.CoNextLevel.Name = "CoNextLevel";
-            this.CoNextLevel.ReadOnly = true;
-            this.CoNextLevel.Width = 118;
-            // 
-            // CoNumber
-            // 
-            this.CoNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoNumber.DataPropertyName = "Number";
-            this.CoNumber.HeaderText = "数量";
-            this.CoNumber.Name = "CoNumber";
-            this.CoNumber.Width = 76;
-            // 
-            // CoLevel
-            // 
-            this.CoLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoLevel.DataPropertyName = "Level";
-            this.CoLevel.HeaderText = "分组";
-            this.CoLevel.Name = "CoLevel";
-            this.CoLevel.Width = 76;
-            // 
-            // CoRemark
-            // 
-            this.CoRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CoRemark.DataPropertyName = "Remark";
-            this.CoRemark.HeaderText = "备注";
-            this.CoRemark.Name = "CoRemark";
-            this.CoRemark.Width = 76;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
@@ -456,21 +334,168 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // typeListTableAdapter
+            // sheetTableAdapter1
             // 
-            this.typeListTableAdapter.ClearBeforeFill = true;
+            this.sheetTableAdapter1.ClearBeforeFill = true;
             // 
-            // sheetListTableAdapter
+            // typeTableAdapter1
             // 
-            this.sheetListTableAdapter.ClearBeforeFill = true;
+            this.typeTableAdapter1.ClearBeforeFill = true;
             // 
-            // importantListTableAdapter
+            // sysuserTableAdapter1
             // 
-            this.importantListTableAdapter.ClearBeforeFill = true;
+            this.sysuserTableAdapter1.ClearBeforeFill = true;
             // 
-            // ownerListTableAdapter
+            // importantTableAdapter1
             // 
-            this.ownerListTableAdapter.ClearBeforeFill = true;
+            this.importantTableAdapter1.ClearBeforeFill = true;
+            // 
+            // AssembleNo2
+            // 
+            this.AssembleNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AssembleNo2.DataPropertyName = "No";
+            this.AssembleNo2.HeaderText = "件号";
+            this.AssembleNo2.Name = "AssembleNo2";
+            this.AssembleNo2.ReadOnly = true;
+            this.AssembleNo2.Width = 76;
+            // 
+            // AssembleName2
+            // 
+            this.AssembleName2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AssembleName2.DataPropertyName = "Name";
+            this.AssembleName2.HeaderText = "名称";
+            this.AssembleName2.Name = "AssembleName2";
+            this.AssembleName2.Width = 76;
+            // 
+            // SheetNo2
+            // 
+            this.SheetNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SheetNo2.DataPropertyName = "SheetNo";
+            this.SheetNo2.DataSource = this.sheetBindingSource;
+            this.SheetNo2.DisplayMember = "SheetName";
+            this.SheetNo2.HeaderText = "图幅";
+            this.SheetNo2.Name = "SheetNo2";
+            this.SheetNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SheetNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SheetNo2.ValueMember = "SheetNo";
+            this.SheetNo2.Width = 76;
+            // 
+            // TypeNo2
+            // 
+            this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TypeNo2.DataPropertyName = "TypeNo";
+            this.TypeNo2.DataSource = this.typeBindingSource;
+            this.TypeNo2.DisplayMember = "TypeName";
+            this.TypeNo2.HeaderText = "件型";
+            this.TypeNo2.Name = "TypeNo2";
+            this.TypeNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TypeNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TypeNo2.ValueMember = "TypeNo";
+            this.TypeNo2.Width = 76;
+            // 
+            // ImportantNo2
+            // 
+            this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ImportantNo2.DataPropertyName = "ImportantNo";
+            this.ImportantNo2.DataSource = this.importantBindingSource;
+            this.ImportantNo2.DisplayMember = "ImportantName";
+            this.ImportantNo2.HeaderText = "重要度";
+            this.ImportantNo2.Name = "ImportantNo2";
+            this.ImportantNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ImportantNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ImportantNo2.ValueMember = "ImportantNo";
+            this.ImportantNo2.Width = 97;
+            // 
+            // OwnerNo2
+            // 
+            this.OwnerNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.OwnerNo2.DataPropertyName = "UserNo";
+            this.OwnerNo2.DataSource = this.sysuserBindingSource;
+            this.OwnerNo2.DisplayMember = "CnName";
+            this.OwnerNo2.HeaderText = "设计";
+            this.OwnerNo2.Name = "OwnerNo2";
+            this.OwnerNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OwnerNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.OwnerNo2.ValueMember = "UserNo";
+            this.OwnerNo2.Width = 76;
+            // 
+            // Remark2
+            // 
+            this.Remark2.DataPropertyName = "Remark";
+            this.Remark2.HeaderText = "备注";
+            this.Remark2.Name = "Remark2";
+            // 
+            // CoNo
+            // 
+            this.CoNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoNo.DataPropertyName = "No";
+            this.CoNo.HeaderText = "序号";
+            this.CoNo.Name = "CoNo";
+            this.CoNo.ReadOnly = true;
+            this.CoNo.Width = 76;
+            // 
+            // CoAssembleNo
+            // 
+            this.CoAssembleNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoAssembleNo.DataPropertyName = "PartNo";
+            this.CoAssembleNo.HeaderText = "组合号";
+            this.CoAssembleNo.Name = "CoAssembleNo";
+            this.CoAssembleNo.ReadOnly = true;
+            this.CoAssembleNo.Width = 97;
+            // 
+            // CoNextLevel
+            // 
+            this.CoNextLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoNextLevel.DataPropertyName = "ChildNo";
+            this.CoNextLevel.HeaderText = "下级件号";
+            this.CoNextLevel.Name = "CoNextLevel";
+            this.CoNextLevel.ReadOnly = true;
+            this.CoNextLevel.Width = 118;
+            // 
+            // CoNumber
+            // 
+            this.CoNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoNumber.DataPropertyName = "Number";
+            this.CoNumber.HeaderText = "数量";
+            this.CoNumber.Name = "CoNumber";
+            this.CoNumber.Width = 76;
+            // 
+            // CoLevel
+            // 
+            this.CoLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoLevel.DataPropertyName = "Groups";
+            this.CoLevel.HeaderText = "分组";
+            this.CoLevel.Name = "CoLevel";
+            this.CoLevel.Width = 76;
+            // 
+            // CoRemark
+            // 
+            this.CoRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CoRemark.DataPropertyName = "Remark";
+            this.CoRemark.HeaderText = "备注";
+            this.CoRemark.Name = "CoRemark";
+            this.CoRemark.Width = 76;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            label5.Location = new System.Drawing.Point(54, 33);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(104, 20);
+            label5.TabIndex = 41;
+            label5.Text = "通知单号:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(169, 28);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(200, 27);
+            this.textBox1.TabIndex = 40;
+            this.textBox1.TabStop = false;
             // 
             // frmDelete
             // 
@@ -478,6 +503,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 826);
+            this.Controls.Add(label5);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -488,17 +515,18 @@
             this.Text = "零部件及装配调整";
             this.Load += new System.EventHandler(this.frmDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheetListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.importantListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownerListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sysuserBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemble)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -507,19 +535,10 @@
         private System.Windows.Forms.DataGridView dgvNextLevel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnQueryNextLevel;
-        private System.Windows.Forms.CheckBox cbAssemble1;
         private System.Windows.Forms.TextBox tbNextLevel;
         private System.Windows.Forms.Button btnDelete;
         private DataSet1 dataSet11;
-        private DataSet1TableAdapters.TypeTableAdapter typeListTableAdapter;
         private System.Windows.Forms.Button btnChange;
-        private System.Windows.Forms.BindingSource sheetListBindingSource;
-        private DataSet1TableAdapters.SheetTableAdapter sheetListTableAdapter;
-        private System.Windows.Forms.BindingSource importantListBindingSource;
-        private DataSet1TableAdapters.ImportantTableAdapter importantListTableAdapter;
-        private System.Windows.Forms.BindingSource ownerListBindingSource;
-        private DataSet1TableAdapters.SysuserTableAdapter ownerListTableAdapter;
-        private System.Windows.Forms.BindingSource typeListBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbAssembleNo;
         private System.Windows.Forms.TextBox tbNextNo;
@@ -532,17 +551,27 @@
         private System.Windows.Forms.DataGridView dgvAssemble;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource sheetBindingSource;
+        private System.Windows.Forms.BindingSource typeBindingSource;
+        private System.Windows.Forms.BindingSource importantBindingSource;
+        private System.Windows.Forms.BindingSource sysuserBindingSource;
+        private DataSet1TableAdapters.SheetTableAdapter sheetTableAdapter1;
+        private DataSet1TableAdapters.TypeTableAdapter typeTableAdapter1;
+        private DataSet1TableAdapters.SysuserTableAdapter sysuserTableAdapter1;
+        private DataSet1TableAdapters.ImportantTableAdapter importantTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssembleNo2;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssembleName2;
         private System.Windows.Forms.DataGridViewComboBoxColumn SheetNo2;
         private System.Windows.Forms.DataGridViewComboBoxColumn TypeNo2;
         private System.Windows.Forms.DataGridViewComboBoxColumn ImportantNo2;
         private System.Windows.Forms.DataGridViewComboBoxColumn OwnerNo2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remark2;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoAssembleNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoNextLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoRemark;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
