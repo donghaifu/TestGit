@@ -385,6 +385,16 @@ namespace Xk
             }
         }
 
+        private void dgvNextLevel1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
+        private void dgvAssemble_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
 
 
     }

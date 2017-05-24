@@ -32,11 +32,18 @@
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDelete));
             this.dgvNextLevel1 = new System.Windows.Forms.DataGridView();
+            this.AssembleNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssembleName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SheetNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sheetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new Xk.DataSet1();
+            this.TypeNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ImportantNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.importantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OwnerNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sysuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Remark2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.btnQueryNextLevel = new System.Windows.Forms.Button();
             this.tbNextLevel = new System.Windows.Forms.TextBox();
@@ -52,25 +59,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvAssemble = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.sheetTableAdapter1 = new Xk.DataSet1TableAdapters.SheetTableAdapter();
-            this.typeTableAdapter1 = new Xk.DataSet1TableAdapters.TypeTableAdapter();
-            this.sysuserTableAdapter1 = new Xk.DataSet1TableAdapters.SysuserTableAdapter();
-            this.importantTableAdapter1 = new Xk.DataSet1TableAdapters.ImportantTableAdapter();
-            this.AssembleNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssembleName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SheetNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TypeNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ImportantNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OwnerNo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Remark2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoAssembleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNextLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sheetTableAdapter1 = new Xk.DataSet1TableAdapters.SheetTableAdapter();
+            this.typeTableAdapter1 = new Xk.DataSet1TableAdapters.TypeTableAdapter();
+            this.sysuserTableAdapter1 = new Xk.DataSet1TableAdapters.SysuserTableAdapter();
+            this.importantTableAdapter1 = new Xk.DataSet1TableAdapters.ImportantTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNextLevel1)).BeginInit();
@@ -83,6 +83,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemble)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
+            label5.Location = new System.Drawing.Point(54, 33);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(104, 20);
+            label5.TabIndex = 41;
+            label5.Text = "通知单号:";
             // 
             // dgvNextLevel1
             // 
@@ -103,6 +114,37 @@
             this.dgvNextLevel1.RowTemplate.Height = 23;
             this.dgvNextLevel1.Size = new System.Drawing.Size(850, 115);
             this.dgvNextLevel1.TabIndex = 26;
+            this.dgvNextLevel1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvNextLevel1_DataError);
+            // 
+            // AssembleNo2
+            // 
+            this.AssembleNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AssembleNo2.DataPropertyName = "No";
+            this.AssembleNo2.HeaderText = "件号";
+            this.AssembleNo2.Name = "AssembleNo2";
+            this.AssembleNo2.ReadOnly = true;
+            this.AssembleNo2.Width = 76;
+            // 
+            // AssembleName2
+            // 
+            this.AssembleName2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AssembleName2.DataPropertyName = "Name";
+            this.AssembleName2.HeaderText = "名称";
+            this.AssembleName2.Name = "AssembleName2";
+            this.AssembleName2.Width = 76;
+            // 
+            // SheetNo2
+            // 
+            this.SheetNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SheetNo2.DataPropertyName = "SheetNo";
+            this.SheetNo2.DataSource = this.sheetBindingSource;
+            this.SheetNo2.DisplayMember = "SheetName";
+            this.SheetNo2.HeaderText = "图幅";
+            this.SheetNo2.Name = "SheetNo2";
+            this.SheetNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SheetNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SheetNo2.ValueMember = "SheetNo";
+            this.SheetNo2.Width = 76;
             // 
             // sheetBindingSource
             // 
@@ -114,20 +156,65 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // TypeNo2
+            // 
+            this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TypeNo2.DataPropertyName = "TypeNo";
+            this.TypeNo2.DataSource = this.typeBindingSource;
+            this.TypeNo2.DisplayMember = "TypeName";
+            this.TypeNo2.HeaderText = "件型";
+            this.TypeNo2.Name = "TypeNo2";
+            this.TypeNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TypeNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TypeNo2.ValueMember = "TypeNo";
+            this.TypeNo2.Width = 76;
+            // 
             // typeBindingSource
             // 
             this.typeBindingSource.DataMember = "Type";
             this.typeBindingSource.DataSource = this.dataSet11;
+            // 
+            // ImportantNo2
+            // 
+            this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ImportantNo2.DataPropertyName = "ImportantNo";
+            this.ImportantNo2.DataSource = this.importantBindingSource;
+            this.ImportantNo2.DisplayMember = "ImportantName";
+            this.ImportantNo2.HeaderText = "重要度";
+            this.ImportantNo2.Name = "ImportantNo2";
+            this.ImportantNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ImportantNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ImportantNo2.ValueMember = "ImportantNo";
+            this.ImportantNo2.Width = 97;
             // 
             // importantBindingSource
             // 
             this.importantBindingSource.DataMember = "Important";
             this.importantBindingSource.DataSource = this.dataSet11;
             // 
+            // OwnerNo2
+            // 
+            this.OwnerNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.OwnerNo2.DataPropertyName = "UserNo";
+            this.OwnerNo2.DataSource = this.sysuserBindingSource;
+            this.OwnerNo2.DisplayMember = "CnName";
+            this.OwnerNo2.HeaderText = "设计";
+            this.OwnerNo2.Name = "OwnerNo2";
+            this.OwnerNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OwnerNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.OwnerNo2.ValueMember = "UserNo";
+            this.OwnerNo2.Width = 76;
+            // 
             // sysuserBindingSource
             // 
             this.sysuserBindingSource.DataMember = "Sysuser";
             this.sysuserBindingSource.DataSource = this.dataSet11;
+            // 
+            // Remark2
+            // 
+            this.Remark2.DataPropertyName = "Remark";
+            this.Remark2.HeaderText = "备注";
+            this.Remark2.Name = "Remark2";
             // 
             // label4
             // 
@@ -301,129 +388,7 @@
             this.dgvAssemble.RowTemplate.Height = 23;
             this.dgvAssemble.Size = new System.Drawing.Size(850, 150);
             this.dgvAssemble.TabIndex = 38;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dgvAssemble);
-            this.groupBox2.Controls.Add(this.tbAssembleNo);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tbNextNo);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.tbGroup);
-            this.groupBox2.Controls.Add(this.btnAssemble);
-            this.groupBox2.Controls.Add(this.btnDeleteAssemble);
-            this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(47, 417);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(901, 364);
-            this.groupBox2.TabIndex = 39;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "装配调整";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(649, 103);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 31);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "更改";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // sheetTableAdapter1
-            // 
-            this.sheetTableAdapter1.ClearBeforeFill = true;
-            // 
-            // typeTableAdapter1
-            // 
-            this.typeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // sysuserTableAdapter1
-            // 
-            this.sysuserTableAdapter1.ClearBeforeFill = true;
-            // 
-            // importantTableAdapter1
-            // 
-            this.importantTableAdapter1.ClearBeforeFill = true;
-            // 
-            // AssembleNo2
-            // 
-            this.AssembleNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AssembleNo2.DataPropertyName = "No";
-            this.AssembleNo2.HeaderText = "件号";
-            this.AssembleNo2.Name = "AssembleNo2";
-            this.AssembleNo2.ReadOnly = true;
-            this.AssembleNo2.Width = 76;
-            // 
-            // AssembleName2
-            // 
-            this.AssembleName2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AssembleName2.DataPropertyName = "Name";
-            this.AssembleName2.HeaderText = "名称";
-            this.AssembleName2.Name = "AssembleName2";
-            this.AssembleName2.Width = 76;
-            // 
-            // SheetNo2
-            // 
-            this.SheetNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SheetNo2.DataPropertyName = "SheetNo";
-            this.SheetNo2.DataSource = this.sheetBindingSource;
-            this.SheetNo2.DisplayMember = "SheetName";
-            this.SheetNo2.HeaderText = "图幅";
-            this.SheetNo2.Name = "SheetNo2";
-            this.SheetNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SheetNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.SheetNo2.ValueMember = "SheetNo";
-            this.SheetNo2.Width = 76;
-            // 
-            // TypeNo2
-            // 
-            this.TypeNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TypeNo2.DataPropertyName = "TypeNo";
-            this.TypeNo2.DataSource = this.typeBindingSource;
-            this.TypeNo2.DisplayMember = "TypeName";
-            this.TypeNo2.HeaderText = "件型";
-            this.TypeNo2.Name = "TypeNo2";
-            this.TypeNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TypeNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TypeNo2.ValueMember = "TypeNo";
-            this.TypeNo2.Width = 76;
-            // 
-            // ImportantNo2
-            // 
-            this.ImportantNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ImportantNo2.DataPropertyName = "ImportantNo";
-            this.ImportantNo2.DataSource = this.importantBindingSource;
-            this.ImportantNo2.DisplayMember = "ImportantName";
-            this.ImportantNo2.HeaderText = "重要度";
-            this.ImportantNo2.Name = "ImportantNo2";
-            this.ImportantNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ImportantNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ImportantNo2.ValueMember = "ImportantNo";
-            this.ImportantNo2.Width = 97;
-            // 
-            // OwnerNo2
-            // 
-            this.OwnerNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.OwnerNo2.DataPropertyName = "UserNo";
-            this.OwnerNo2.DataSource = this.sysuserBindingSource;
-            this.OwnerNo2.DisplayMember = "CnName";
-            this.OwnerNo2.HeaderText = "设计";
-            this.OwnerNo2.Name = "OwnerNo2";
-            this.OwnerNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.OwnerNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.OwnerNo2.ValueMember = "UserNo";
-            this.OwnerNo2.Width = 76;
-            // 
-            // Remark2
-            // 
-            this.Remark2.DataPropertyName = "Remark";
-            this.Remark2.HeaderText = "备注";
-            this.Remark2.Name = "Remark2";
+            this.dgvAssemble.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvAssemble_DataError);
             // 
             // CoNo
             // 
@@ -476,16 +441,53 @@
             this.CoRemark.Name = "CoRemark";
             this.CoRemark.Width = 76;
             // 
-            // label5
+            // groupBox2
             // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold);
-            label5.Location = new System.Drawing.Point(54, 33);
-            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(104, 20);
-            label5.TabIndex = 41;
-            label5.Text = "通知单号:";
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.dgvAssemble);
+            this.groupBox2.Controls.Add(this.tbAssembleNo);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.tbNextNo);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbGroup);
+            this.groupBox2.Controls.Add(this.btnAssemble);
+            this.groupBox2.Controls.Add(this.btnDeleteAssemble);
+            this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox2.Location = new System.Drawing.Point(47, 417);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(901, 364);
+            this.groupBox2.TabIndex = 39;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "装配调整";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(649, 103);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 31);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "更改";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // sheetTableAdapter1
+            // 
+            this.sheetTableAdapter1.ClearBeforeFill = true;
+            // 
+            // typeTableAdapter1
+            // 
+            this.typeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // sysuserTableAdapter1
+            // 
+            this.sysuserTableAdapter1.ClearBeforeFill = true;
+            // 
+            // importantTableAdapter1
+            // 
+            this.importantTableAdapter1.ClearBeforeFill = true;
             // 
             // textBox1
             // 
